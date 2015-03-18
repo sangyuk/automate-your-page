@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sang's Notes</title>
+      <link rel="stylesheet" type="text/css" href="project1.css">
+  </head>
+  <body>
+	  <h1>Important Concepts - Webpages, Documents and Structures</h1>
+	  <div class="lesson">
+      <h2>Lesson 1: The Basics of the Web and HTML</h2>
+      <div class="concept">
+        <div class="concept-title">
+          Components of the Web 
+        </div>
+        <div class="concept-description">
+      	  <p>
+      	    A PC <span class="italic">Browser</span> makes <span class="italic">HTTP Requests</span> via the internet to <span class="italic">Hosting Servers</span>, which respond with html files that the browser displays. Please check <a href="https://www.udacity.com/course/viewer#!/c-ud721/l-3508959201/e-48329854/m-48480496">this video</a> for more explanation.   
+      	  </p>
+        </div>  
+      </div>	
+      <div class="concept">
+        <div class="concept-title">
+          HTML	
+        </div>
+        <div class="concept-description">
+          <p>
+            HTML(HyperText Markup Language) consists of <span class="italic">text</span>, <span class="italic">markup</span>, and references to other documents such as videos and images and links to other documents. 
+          </p>	
+        </div>	
+      </div>
+      <div class="concept">
+        <div class="concept-title">
+          HTML Tags and Elements  
+        </div>
+        <div class="concept-description">
+          <p>
+            HTML markup consists of elements such as <span class="italic">tags</span> and <span class="italic">contents</span>, which are surrounded by tags. Most tags have opening and closing tags, but some tags, called void tags, only have opening tags. Attributes are the properties of elements.For example, Anchor tags use  attributes that equal value such as URL that link to some documents.
+          </p>  
+        </div>  
+      </div>
+      <div class="concept">
+        <div class="concept-title">
+          Inline vs Block Elements 
+        </div>
+        <div class="concept-description">
+          <p>
+            HTML elements are either inline e.g. <span class="bold">br</span>, <span class="bold">img</span>, <span class="bold">b</span>, <span class="bold">em</span>, <span class="bold">span</span>, or block e.g. <span class="bold">p</span>, <span class="bold">div</span>. block makes an invisible box around the text.
+          </p>  
+        </div>  
+      </div>
+    </div>  
+    <div class="lesson">
+      <h2>Lesson 2: Creating a Structured Document with HTML</h2>
+      <div class="concept">
+        <div class="concept-title">
+          Tree Like Structure  
+        </div>
+        <div class="concept-description">
+          <p>
+            Different HTML elements are nested in one another. In a browser this structure looks like a series of boxes inside of other boxes. While HTML controls the structure of a web page CSS controls the style of the page.   
+          </p>
+        </div>  
+      </div>  
+      <div class="concept">
+        <div class="concept-title">
+          Boxifying a Webpage  
+        </div>
+        <div class="concept-description">
+          <p>
+            Every element on the web is contained in an invisible box. The more indented an element is when viewed as text, the more nested its box is.  
+          </p>
+        </div>  
+      </div>
+    </div>  
+    <div class="lesson">
+      <h2>Lesson 3: Adding CSS Style to HTML Structure</h2>
+      <div class="concept">
+        <div class= "concept-title">
+          CSS
+        </div>
+        <div class= "concept-description">
+          <p>
+            CSS is Cascading Style Sheets, a language that controls the style of HTML elements. 
+          </p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">
+          How does CSS work - in sync with HTML containers and class  
+        </div>
+        <div class="concept-description">
+          <p>
+            CSS identifies a tag or a class of the element to match and applies rules that determine the design of the corresponding element. One benefit of using HTML containers and class is that it enables one to aviod the repetition of the same codes. HTML containers and class, along with CSS, provide similar styles and functionality to related html content, thereby helping one to write a more structured html script. 
+          </p> 
+          <pre>
+            <code>
+              div {
+              color: red;
+              }
+            </code>
+          </pre>
+          <p>
+            <code>div</code> is a selector that tells the browser that the  rule color: red will be applied to every div element. color is an attribute and a red is its value. If this rule is meant to be applied to only certain divs, the corresponding HTML and CSS can be rewritten using class selectors as follows. 
+          </p>
+          <pre>
+            <code>
+              &lt;div class=&quot;description&quot;&gt;&lt;/div&gt;
+                &lt;style&gt;
+                .description {
+                  color: red;
+                }
+                &lt;/style&gt;
+             </code>
+          </pre> 
+          <p>
+            Cascading means rules are applied not only to the elements that they directly match but also to the child elements of those elements. if a child element has overlapping rules applied to it, more specific rules take precedence.  Styles are applied in the following order, with definitions further down the list overwriting previous definitions: the default style of a browser, stylesheet in a separate file, stylesheet inside HTML, inline style in an element. 
+          </p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">
+          How CSS can be incorporated into the webpage 
+        </div>
+        <div class="concept-description">
+          <p>
+            <span class="bold">1 inline style in an element</span>
+          </p>
+          <p>
+            This method is not recommended because not only it leads to redundant codes but also the style attributes of every single HTML element must be modified. 
+          </p>  
+          <pre>
+            &lt;body&gt;
+                &lt;div style=&quot;color: red&quot;&gt;
+                    This div will have a red text.
+                &lt;/div&gt;
+            &lt;/body&gt;   
+          </pre>
+          <p>
+            <span class="bold">2 Stylesheet inside HTML</span>
+          </p>
+          <p>
+            This method is good for small projects. CSS can be added inside a <code>&lt;style&gt;</code> element, which in turn is added inside a <code>&lt;head&gt;</code> element.
+          </p>
+          <pre>
+            <code>
+             &lt;head&gt;
+                &lt;style&gt;
+                  div {
+                  color : red;
+                  }
+                &lt;/style&gt;
+              &lt;/head&gt;
+              &lt;body&gt;
+               &lt;div&gt;
+                 This will have a red text.
+               &lt;/div&gt;
+              &lt;/body&gt;               
+            </code>
+          </pre> 
+          <p>
+            <span class="bold">3 stylesheet in a separate file</span>
+          </p>
+          <p>
+            This method produces the most well organized web structure. All HTML can be written in one file( main.html), and all CSS code in a separate file (style.css) in the same folder. Add a <code>&lt;head&gt;</code> element to the top of the HTML and a <code>&lt;link&gt;</code> tag, along with the following attributes, inside the<code>&lt;head&gt;</code> element. <code>&lt;link&gt;</code>: *<code>rel="stylesheet"</code>*<code>type="text/css"</code>*<code>href="style.css"</code>
+          </p>
+          <pre>
+            <code>
+              &lt;head&gt;
+                 &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt;
+              &lt;/head&gt;
+              &lt;body&gt;
+                &lt;div&gt;
+                  This will have a red text.
+                &lt;/div&gt;
+              &lt;/body&gt;            
+             </code>
+          </pre>
+          <p>
+            and <code>style.css</code> can be written like this. 
+          </p>
+          <pre>
+            <code>
+              div {
+              color: red;
+            }
+            </code>
+          </pre>         
+        </div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">
+          Box Sizing 
+        </div>
+        <div class="concept-description">
+          <p>
+            HTML elements are boxes and each box has 4 components(margin, border, padding, content). To ensure correct sizing, one can set size in terms of percents rather than pixels, or set the box-sizing attribute to border-box for every element. 
+          </p>
+          <pre>
+            <code>
+              * {
+               box-sizing: border-box;
+               } 
+            </code>
+          </pre>
+        </div>
+      </div>    
+      <div class="concept">
+        <div class="concept-title">
+          Box Positioning 
+        </div>
+        <div class="concept-description">
+          <p>
+            Divs are block elements (as opposed to inline), so by default they take up the entire width of a page. Adding the rule <code>display: flex;</code> to the appropriate CSS will override this behavior and let divs appear next to each other. 
+          </p>
+        </div>  
+      </div>
+    </div> 
+    <h1>Important Concepts - Telling Computers What To Do</h1>
+    <div class="lesson">
+      <h2>Lesson 1: Introduction to "Serious" Programming</h2>
+      <div class="concept">
+        <div class="concept-title">
+          Computer 
+        </div>
+        <div class="concept-description">
+          <p>
+            Unlike most machines that are built to perform particular functions, computers can be <span class="bold">programmed</span> to do any desired task according to a <span class="bold">clear sequence of instructions.</span>
+          </p>
+        </div>
+      </div>       
+      <div class="concept">
+        <div class="concept-title">
+          Computer Programming 
+        </div>
+        <div class="concept-description">
+          <p>
+            A program consists of a sequence of specfic instructions that a computer follows to carry out its intended work. 
+          </p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">
+          Programming Language  
+        </div>
+        <div class="concept-description">
+          <p>
+            A programming language is written in a particular language that a computer can understand and execute. It has its own grammar that's very exact about correct and incorrect expressions. Computers are not capable of contextual interpretations, so the written code has to be in exact keeping with the rules of that language's interpreter.    
+          </p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">
+          Python  
+        </div>
+        <div class="concept-description">
+          
+            Python is a programming language, that comes  with its own interpreter that converts any written code into the instructions that a computer can understand and execute. A valid Python statement is called a Python expression. For example, <pre><code>print 1 + 1</code></pre> is a correct expression, whereas <pre><code>print 1 +</code></pre> isn't.
+          
+        </div>
+      </div>
+    </div>
+    <div class="lesson">
+      <h2>Lesson 2: Variables and Strings</h2>  
+      <div class="concept">
+        <div class="concept-title">
+          Python Variables  
+        </div>
+        <div class="concept-description">
+          
+            Variables are names to which particular values are <span class="bold">assigned</span>. For example, in the following expression <pre><code>car = 100</code></pre>, <code>car</code> is a variable and its value is <code>100</code>. When the value is a string, it has to be surrounded by ' ' or " ". <pre><code>car = "red"</code></pre>. The same variables can assume different values.   
+           
+        </div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">
+          Different meanings of the '=' sign 
+        </div>
+        <div class="concept-description">
+          <p>
+            In <code>1 + 2 = 3</code>, '=' means equal. 
+            In <code>car = 100</code>, '=' means assignment. 
+          </p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">
+          How useful can variables be?   
+        </div>
+        <div class="concept-description">
+          <ul>
+            <li>Variable names that explain the context of the code can enhance code readability.</li>
+            <li>Variables save important values.</li>
+            <li>Variables make it easy to change the value of something. <code>years = years + 1</code></li>            
+          </ul>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">
+          <span class="bold"><code>1 + 1</code></span>  vs. <span class="bold"><code>"1"+"1"</code></span>   
+        </div>
+        <div class="concept-description">
+          <p>
+            <span class="bold"><code>1</code></span> is a numeric, but <span class="bold"><code>"1"</code></span> is a string. While <span class="bold"><code>1 + 1</code></span> results in <span class="bold"><code>2</code></span>, <span class="bold"><code>"1" + "1"</code></span> results in <span class="bold"><code>"11"</code></span>.                           
+          </p>
+        </div>
+      </div>  
+    </div>
+    <div class="lesson">
+      <h2>Lesson 3: Input -> Function -> Output</h2>
+      <div class="concept">
+        <div class="concept-title">
+          Python Functions
+        </div>
+        <div class="concept-description">
+          <p>
+            A function(procedure)takes input, processes it and produces output.
+          </p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">
+          Making vs. Using a function
+        </div>
+        <div class="concept-description">
+          <p>
+            To make a function. def name(parameter). Inside the function, write in a code that uses the input parameters. 
+          </p>
+          <pre>
+            <code>
+              def add(x, y):
+              <span class="indent">answer= x + y</span>
+              <span class="indent">return answer</span>
+            </code>
+          </pre>
+          <p>
+            To use a function, call it with certain values for the parameter. 
+          </p>
+          <pre>
+            <code>
+              print add(1, 3)
+              >>> 4 
+            </code>
+          </pre>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">
+          How do functions help avoid repetition
+        </div>
+        <div class="concept-description">
+          <p>
+            Once defined, the function can perform the intended work unless modified. This saves a great deal of time and efforts on the part of programmers
+          </p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">
+          What does a return statement do
+        </div>
+        <div class="concept-description">
+          <p>
+            The <span class="bold">return</span> keyword produces the outcome of the function. It absense leads to the outcome <span class="bold">"None"</span>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="lesson">
+      <h2>Lesson 4: Decisions and Repetition: If and While</h2>
+      <div class="concept">
+        <div class="concept-title">
+          Making Comparisons 
+        </div>
+        <div class="concept-description">
+          <p>
+            operators like &lt;, >, &lt;=, == enable numerical comparisons. The output of a comparison is a boolean value, either True or False. 
+          </p>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">
+          Making Decisions 
+        </div>
+        <div class="concept-description">
+          <p>
+            In order to make our functions do different things, depending on the result of a comparison, use an <span class="bold"><code>if</code></span> statement. In the following example, the absolute(x) function converts the negative parameter x by adding the negative sign to it and then return the neutralized parameter x.  
+          </p>
+          <pre>
+            <code>
+              def absoulte(x):
+              <span class="indent">if x &lt; 0:</span>
+              <span class="indenttwice">x = -x</span>
+              <span class="indent">return x</span>            
+            </code>
+          </pre>          
+        </div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">
+          While Loop 
+        </div>
+        <div class="concept-description">
+          <p>
+            A <span class="bold"><code>while</code></span> statement executes its block code any number of times as long as its test expression remains True, whereas an if statement executes its block only once if its test expression is True.  
+          </p>
+          <pre>
+            <code>
+              while &lt;TestExpression&gt;:
+              <span class="indent">&lt;Block&gt;</span><br>
+              if &lt;TestExpression&gt;:
+              <span class="indent">&lt;Block&gt;</span>            
+            </code>
+          </pre>          
+        </div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">
+          Break  
+        </div>
+        <div class="concept-description">
+          <p>
+            A <span class="bold"><code>break</code></span> statement provides a way of the while loop when its test expression is True.           
+          </p>
+          <pre>
+            <code>
+              while &lt;TestExpression&gt;:
+              <span class="indent">&lt;Code&gt;</span>
+              <span class="indent">if &lt;TestExpression&gt;:</span>
+              <span class="indenttwice">&lt;Block&gt;</span>            
+            </code>
+          </pre>          
+        </div>
+      </div>
+    </div>
+    <div class="lesson">
+      <h2>Lesson 5: Structured Data: Lists and For Loops</h2>
+      <div class="concept">
+        <div class="concept-title">
+          Structured Data  
+        </div>
+        <div class="concept-description">
+          <span class="bold">String</span>
+          <ul>
+            <li>Elements are characters.</li>
+            <li>Surrounded by single or doublequotes.<code>s='yabba!'</code></li>
+            <li>Select elements using &lt;string&gt;[&lt;number&gt;].<code>s[0]->'y'</code></li>
+            <li>Select sub-sequence using &lt;string&gt;[&lt;number&gt;:&lt;number&gt;].<code>s[2:4]->bb</code></li>
+            <li>Immutable. <code>s[0]='b'->Error</code>. Cannot change the value of a string</li>            
+          </ul>
+          <span class="bold">List</span>
+          <ul>
+            <li>Elements may be any Python value.</li>
+            <li>Surrounded by square brackets.<code>p=['y','a','b','b','a','!']</code></li>
+            <li>Select elements using &lt;list&gt;[&lt;number&gt;].<code>p[0]->'y'</code></li>
+            <li>Select sub-sequence using &lt;list&gt;[&lt;number&gt;:&lt;number&gt;].<code>p[2:4]->['b','b']</code></li>
+            <li>Mutable. <code>p[0]='b'</code>. Changes the value of the first element of p </li>            
+          </ul>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">
+          Nestled Lists
+        </div>
+        <div class="concept-description">
+          <p>
+            Elements of a list can be any type, including another list. An inner element of the nestled list can be accessed through double indexing.
+          </p>
+          <pre>
+            <code>
+              beatles =[['John', 1940], ['Paul', 1942], ['George', 1943], ['Ringo', 1940]]<br>
+              print beatles[1][0]
+              John 
+            </code>
+          </pre>
+        </div>
+      </div>
+      <div class="concept">
+        <div class="concept-title">
+          Aliasing 
+        </div>
+        <div class="concept-description">
+          <p>
+            When there are multiple names that refer to the same object, any change in that object will affect all the variables referring to it. 
+          </p>          
+          <pre>
+            <code>
+              p = ['H', 'e', 'l', 'l', 'o']
+              q = p
+              q[4] = '!'
+              print p
+              ['H', 'e', 'l', 'l', '!']
+            </code>
+          </pre>
+        </div> 
+      </div>
+      <div class="concept">
+        <div class="concept-title">
+          List Operations
+        </div>
+        <div class="concept-description">
+          <ul>
+            <li>Append: adds a new element to the end of a list. <code>&lt;list&gt;.append(&lt;element&gt;)</code></li>
+            <li>Concatenation: the <span class="bold">+</span> operator combines two lists without mutating either. &lt;list&gt; + &lt;list&gt; -> &lt;list&gt;</li>
+            <li>Length: the <span class="bold">len</span> operator can be used to find out the length of an object, which can be a list, a string, or a collection of lists and strings.len(&lt;list&gt;) -> &lt;number&gt;</li>
+          </ul>
+         </div>
+      </div>     
+      <div class="concept">
+        <div class="concept-title">
+          Loops on Lists 
+        </div>
+        <div class="concept-description">
+          <p>
+            In the <span class="bold">while</span> loop, the &lt;block&gt; is executed if the test expression is True. At the end of the block, execution continues by re-evaluating the test expression, and continuing to execute the block as long as the test expression evaluates to true.  
+          </p>
+          <pre>
+            <code>
+              while &lt;TestExpression&gt;:
+              &lt;block&gt;  
+            </code>
+            <code>
+              def print_all_elements(p):
+                i = 0 
+                while i &lt; len(p):
+                  print p[i]
+                  i = i + 1
+            </code> 
+          </pre>
+          <p>
+            The <span class="bold">for</span> loop goes through each element of a list in turn, assigning that element to the &lt;name&gt; and evaluating the &lt;block&gt;. 
+          </p>          
+          <pre>
+            <code>
+              for &lt;name&gt; in &lt;list&gt;:
+              &lt;block&gt; n 
+            </code>
+            <code>
+              def print_all_elements(p):
+                for e in p:
+                  print e 
+            </code>
+          </pre>
+        </div> 
+      </div>
+    </div> 
+  </body>
+</html>
